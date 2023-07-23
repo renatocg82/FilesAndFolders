@@ -30,8 +30,7 @@ public class ReadingAndWriting {
 				BufferedReader br = new BufferedReader(fr);
 				FileWriter fw = new FileWriter("C:\\temp\\ws_eclipse\\FilesAndFoldExerc\\Out\\ExOut.csv", true);
 				BufferedWriter bw = new BufferedWriter(fw)) {
-			// String[] lines = str.split(",");
-					
+			
 			String line = br.readLine();
 
 			while (line != null) {
