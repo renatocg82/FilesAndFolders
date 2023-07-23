@@ -23,6 +23,8 @@ public class ReadingAndWriting {
 		String strPath = scString.nextLine();
 		File filePath = new File (strPath);
 		boolean outDirectory = new File (filePath.getParent() + "\\Out").mkdir();
+		System.out.println();
+		System.out.println("Folder \\Out created: " + outDirectory);
 
 		try (FileReader fr = new FileReader(strPath);
 				BufferedReader br = new BufferedReader(fr);
