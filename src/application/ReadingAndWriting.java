@@ -2,6 +2,7 @@ package application;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,12 +21,15 @@ public class ReadingAndWriting {
 
 		System.out.println("Enter the input file path: ");
 		String strPath = scString.nextLine();
+		File filePath = new File (strPath);
+		boolean outDirectory = new File (filePath.getParent() + "\\Out").mkdir();
 
 		try (FileReader fr = new FileReader(strPath);
 				BufferedReader br = new BufferedReader(fr);
-				FileWriter fw = new FileWriter("C:\\temp\\ws_eclipse\\FilesAndFoldExerc\\ExOut.csv", true);
+				FileWriter fw = new FileWriter("C:\\temp\\ws_eclipse\\FilesAndFoldExerc\\Out\\ExOut.csv", true);
 				BufferedWriter bw = new BufferedWriter(fw)) {
 			// String[] lines = str.split(",");
+					
 			String line = br.readLine();
 
 			while (line != null) {
